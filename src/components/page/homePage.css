@@ -1,0 +1,9 @@
+.homeMeinBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: #373737;
+  font-family: Montserrat;
+  font-size: 40px;
+}
