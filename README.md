@@ -4,11 +4,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Description
 
-"Tweet-Cards" is an application that allows you to view tweet cards with interactive features at the click of a button. Using React, Redux Toolkit, redux-persist and react-router-dom technologies, the app creates a convenient platform for promoting and displaying tweets.
+<!-- "Tweet-Cards" is an application that allows you to view tweet cards with interactive features at the click of a button. Using React, Redux Toolkit, redux-persist and react-router-dom technologies, the app creates a convenient platform for promoting and displaying tweets.
 
 The main goal of the project is to provide users with a convenient tool for viewing tweet cards with the ability to perform interactive actions. With the "Tweet-Cards" application, users can view tweet cards that contain text content, images, author information and other important details.
 
-The "Tweet-Cards" application uses the mockapi.io UI service to receive user profile data. Using the created "users" resource with the required fields such as id, user, tweets, followers and avatar, the application accesses the tweet cards.
+The "Tweet-Cards" application uses the mockapi.io UI service to receive user profile data. Using the created "users" resource with the required fields such as id, user, tweets, followers and avatar, the application accesses the tweet cards. -->
 
 ## Available Scripts
 
