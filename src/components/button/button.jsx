@@ -1,12 +1,12 @@
 import "./button.css";
 
-const Button = ({ isActive, onClick, text }) => {
+const Button = ({ isActive = true, onClick, text }) => {
   return (
     <button
       onClick={onClick}
       type="button"
       style={{
-        backgroundColor: isActive ? "#5CD3A8" : "#EBD8FF",
+        backgroundColor: isActive ? "var(--accent-color)" : "#EBD8FF",
       }}
       className="meinButtonBox"
     >

@@ -2,7 +2,7 @@
 
 :root {
   --accent-color: #f4c550;
-  --aaaa1: #fbe9ba;
+  --latte-bg: #fbe9ba;
   --aaaa2: #9fbaae;
   --aaaa3: #cbded3;
   --aaaa4: #9fb7ce;
@@ -12,6 +12,7 @@
   --aaaa8: #f0aa8d;
   --aaaa9: #f4c8ba;
   --main-black: #121417;
+  --grey-bg: #f8f8f8;
   --white: #ffffff;
 }
 
