@@ -1,25 +1,30 @@
 import "./header.css";
-import ConteinerCenter from "../conteiner/ConteinerCenter";
+import Logo from "../logo/logo";
+import Auth from "../auth/auth";
+import Conteiner from "../conteiner/Conteiner";
 
 const { NavLink } = require("react-router-dom");
 
 function Header() {
   return (
-    <header className="header">
-      <ConteinerCenter>
+    <Conteiner>
+      <header className="header">
+        <Logo />
         <nav className="nav">
           <>
             <NavLink className="nav-link" to={"/"}>
               Home
             </NavLink>
 
-            <NavLink className="nav-link" to={"/tweets-cards"}>
-              Tweets Cards
+            <NavLink className="nav-link" to={"/teachers"}>
+              Teachers
             </NavLink>
           </>
         </nav>
-      </ConteinerCenter>
-    </header>
+
+        <Auth isLogin={false} />
+      </header>
+    </Conteiner>
   );
 }
 

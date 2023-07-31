@@ -5,7 +5,7 @@ import Header from "../header/header";
 const Layout = () => {
   return (
     <>
-      <ConteinerCenter flexDirection="row">
+      <ConteinerCenter>
         <Header />
       </ConteinerCenter>
 

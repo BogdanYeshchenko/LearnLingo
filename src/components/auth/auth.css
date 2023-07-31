@@ -1,0 +1,43 @@
+.authBox {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logInButton {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--main-black);
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.25;
+  background: inherit;
+  border: none;
+  padding: 0;
+}
+
+.registrationButton {
+  display: flex;
+  padding: 14px 39px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  background: var(--main-black);
+  color: var(--white);
+  border: none;
+}
+
+.hello {
+  color: var(--main-black);
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25;
+}

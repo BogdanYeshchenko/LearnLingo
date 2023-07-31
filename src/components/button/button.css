@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 6px;
+  /* gap: 6px;
 
   width: 196px;
   padding: 14px 28px;
@@ -19,5 +19,5 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  text-transform: uppercase;
+  text-transform: uppercase; */
 }
