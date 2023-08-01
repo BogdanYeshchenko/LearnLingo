@@ -2,7 +2,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import HomePage from "./components/page/homePage";
-import Teachers from "./components/teachers/teachers";
+import TeachersPage from "./components/page/teachersPage";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<HomePage />} />
-          <Route path="/teachers" element={<Teachers />} />
+          <Route path="/teachers" element={<TeachersPage />} />
         </Route>
       </Routes>
     </>

@@ -15,7 +15,6 @@
   align-items: center;
 
   @media screen and (min-width: 1440px) {
-    /* gap: 24px; */
     flex-direction: row;
   }
 }
@@ -37,7 +36,7 @@
 }
 
 .heroTitle {
-  color: #121417;
+  color: var(--main-black);
   font-family: Roboto;
   font-size: 48px;
   font-style: normal;
@@ -53,7 +52,7 @@
 }
 
 .heroTitleAccent {
-  color: #121417;
+  color: var(--main-black);
   font-family: Roboto;
   font-size: 48px;
   font-style: italic;
@@ -66,7 +65,7 @@
 }
 
 .heroAbout p {
-  color: #121417;
+  color: var(--main-black);
   font-family: Roboto;
   font-size: 16px;
   font-style: normal;

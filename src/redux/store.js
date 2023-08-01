@@ -1,6 +1,5 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import usersReducer from "./users/usersSlice.js";
-import followingStatusReducer from "./followingStatus/followingStatusSlice.js";
+import teachersReducer from "./teachers/teachersSlice.js";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import {
@@ -18,8 +17,8 @@ const persistConfig = {
 };
 
 const rootReduser = combineReducers({
-  users: usersReducer,
-  followingStatus: persistReducer(persistConfig, followingStatusReducer),
+  teachers: persistReducer(persistConfig, teachersReducer),
+  // followingStatus: persistReducer(persistConfig, followingStatusReducer),
 });
 
 export const store = configureStore({
