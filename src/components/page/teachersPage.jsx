@@ -15,6 +15,7 @@ const TeachersPage = () => {
 
   const isLoading = useSelector((state) => state.teachers.isLoading);
   const teachers = useSelector((state) => state.teachers.teachers);
+  console.log(teachers);
 
   const [loadedTeachersCount, setLoadedTeachersCount] = useState(4);
 
@@ -35,7 +36,7 @@ const TeachersPage = () => {
         </ConteinerCenter>
       ) : (
         <ul className="teachersList">
-          {teachers.map((el) => (
+          {teachers?.map((el) => (
             <TeacherCard key={nanoid()} teacher={el} />
           ))}
         </ul>

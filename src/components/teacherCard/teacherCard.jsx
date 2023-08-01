@@ -7,7 +7,7 @@ import { nanoid } from "@reduxjs/toolkit";
 const TeacherCard = ({ teacher }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const {
-    id,
+    // id,
     name,
     surname,
     languages,
