@@ -5,7 +5,7 @@ import { database } from "../../firebase/config";
 
 export const getTeachers = createAsyncThunk(
   "teachers/getTeachers",
-  async (count, thunkAPI) => {
+  async (_, thunkAPI) => {
     const dbRef = ref(database);
 
     try {
@@ -15,9 +15,7 @@ export const getTeachers = createAsyncThunk(
         const data = snapshot.val();
         const allTeachers = Object.values(data);
 
-        const loadedTeachers = allTeachers.slice(0, count);
-
-        return loadedTeachers;
+        return allTeachers;
       } else {
         console.log("No data available");
       }

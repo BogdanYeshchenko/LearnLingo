@@ -3,11 +3,12 @@ import { PiBookOpen } from "react-icons/pi";
 import { AiFillStar } from "react-icons/ai";
 import { useState } from "react";
 import { nanoid } from "@reduxjs/toolkit";
+import Button from "../button/button";
 
 const TeacherCard = ({ teacher }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const {
-    // id,
+    id,
     name,
     surname,
     languages,
@@ -54,8 +55,8 @@ const TeacherCard = ({ teacher }) => {
               <span>Rating: {rating}</span>
             </li>
             <li className="bleackTitle">
-              Price / 1 hour:{" "}
-              <span className="greenText">{price_per_hour}</span>
+              Price / 1 hour:
+              <span className="greenText"> {price_per_hour}$</span>
             </li>
           </ul>
         </div>
@@ -125,6 +126,10 @@ const TeacherCard = ({ teacher }) => {
               </li>
             ))}
           </ul>
+          <Button
+            text="Book trial lesson"
+            onClick={() => console.log("Book trial lesson", `id=${id}`)}
+          />
         </div>
       </div>
     </li>

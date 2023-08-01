@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-
 import Conteiner from "../conteiner/Conteiner";
 import TeacherCard from "../teacherCard/teacherCard";
 import "./teachersPage.css";
@@ -15,16 +14,14 @@ const TeachersPage = () => {
 
   const isLoading = useSelector((state) => state.teachers.isLoading);
   const teachers = useSelector((state) => state.teachers.teachers);
-  console.log(teachers);
 
   const [loadedTeachersCount, setLoadedTeachersCount] = useState(4);
 
   useEffect(() => {
-    dispatch(getTeachers(loadedTeachersCount));
-  }, [dispatch, loadedTeachersCount]);
+    dispatch(getTeachers());
+  }, [dispatch]);
 
   const handleLoadMore = () => {
-    // При нажатии "Load more" увеличиваем количество загружаемых учителей на 4
     setLoadedTeachersCount((prevCount) => prevCount + 4);
   };
 
@@ -32,19 +29,24 @@ const TeachersPage = () => {
     <Conteiner>
       {isLoading ? (
         <ConteinerCenter>
-          <PropagateLoader color={"var(--accent-color)"} size={40} />
+          <PropagateLoader
+            color={"var(--accent-color)"}
+            size={40}
+            cssOverride={{ marginBottom: "64px" }}
+          />
         </ConteinerCenter>
       ) : (
         <ul className="teachersList">
-          {teachers?.map((el) => (
+          {teachers?.slice(0, loadedTeachersCount).map((el) => (
             <TeacherCard key={nanoid()} teacher={el} />
           ))}
         </ul>
       )}
-
-      <ConteinerCenter>
-        <Button text="Load more" onClick={handleLoadMore} />
-      </ConteinerCenter>
+      {teachers?.length >= loadedTeachersCount && !isLoading && (
+        <ConteinerCenter>
+          <Button text="Load more" onClick={handleLoadMore} />
+        </ConteinerCenter>
+      )}
     </Conteiner>
   );
 };
