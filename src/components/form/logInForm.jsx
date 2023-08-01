@@ -1,6 +1,6 @@
 import "./form.css";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 import { TbEyeOff } from "react-icons/tb";
 
 const LogInForm = () => {
@@ -8,7 +8,7 @@ const LogInForm = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const distpatch = useDispatch();
+  //   const distpatch = useDispatch();
 
   function handleFormEvent(e) {
     const name = e.target.name;
