@@ -4,12 +4,29 @@ import { FiLogIn, FiLogOut } from "react-icons/fi";
 import { useState } from "react";
 import LogInForm from "../form/logInForm";
 import RegisterForm from "../form/registerForm";
+import { useSelector, useDispatch } from "react-redux";
+import { logOutThunk } from "../../redux/auth/authOperations";
+import ConteinerCenter from "../conteiner/ConteinerCenter";
+import ClipLoader from "react-spinners/ClipLoader";
 
-const Auth = ({ isLogin, name = "User" }) => {
+const Auth = () => {
   const [isActiveLoginModal, setIsActiveLoginModal] = useState(false);
   const [isActiveRegisterModal, setIsActiveRegisterModal] = useState(false);
+  const isAuth = useSelector((state) => state.auth.isAuth);
+  const dispatch = useDispatch();
 
-  if (!isLogin) {
+  const login = useSelector((state) => state.auth.login);
+  const isAuthLoading = useSelector((state) => state.auth.isAuthLoading);
+
+  if (isAuthLoading) {
+    return (
+      <ConteinerCenter>
+        <ClipLoader color={"var(--accent-color)"} size={20} />
+      </ConteinerCenter>
+    );
+  }
+
+  if (!isAuth) {
     return (
       <div className="authBox">
         <button
@@ -33,13 +50,13 @@ const Auth = ({ isLogin, name = "User" }) => {
           Registration
         </button>
         <Modal active={isActiveLoginModal} setActive={setIsActiveLoginModal}>
-          <LogInForm />
+          <LogInForm setIsActiveLoginModal={setIsActiveLoginModal} />
         </Modal>
         <Modal
           active={isActiveRegisterModal}
           setActive={setIsActiveRegisterModal}
         >
-          <RegisterForm />
+          <RegisterForm setIsActiveRegisterModal={setIsActiveRegisterModal} />
         </Modal>
       </div>
     );
@@ -47,12 +64,12 @@ const Auth = ({ isLogin, name = "User" }) => {
 
   return (
     <div className="authBox">
-      <p className="hello">Hello, {name}!</p>
+      <p className="hello">Hello, {login}!</p>
       <button
         className="logInButton"
         type="button"
         onClick={() => {
-          console.log("Log out");
+          dispatch(logOutThunk());
         }}
       >
         <FiLogOut size="20px" color="#F4C550" />

@@ -1,15 +1,18 @@
 import "./form.css";
 import { useState } from "react";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { TbEyeOff } from "react-icons/tb";
+import { logUpThunk } from "../../redux/auth/authOperations";
 
-const RegisterForm = () => {
+const RegisterForm = ({ setIsActiveRegisterModal }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  //   const distpatch = useDispatch();
+  const body = { login: name, email, password };
+
+  const distpatch = useDispatch();
 
   function handleFormEvent(e) {
     const name = e.target.name;
@@ -31,6 +34,10 @@ const RegisterForm = () => {
     <form
       onSubmit={(e) => {
         e.preventDefault();
+        distpatch(logUpThunk(body));
+
+        setIsActiveRegisterModal(false);
+
         console.log({ name, email, password });
       }}
       className="LogInFormBox"

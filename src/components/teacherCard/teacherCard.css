@@ -1,4 +1,5 @@
 .teacherItemBox {
+  position: relative;
   display: flex;
 
   align-items: flex-start;
@@ -11,6 +12,12 @@
     padding: 24px;
     gap: 48px;
   }
+}
+
+.addFavoriteBtn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
 }
 
 .avatarBox {
@@ -77,8 +84,9 @@
 
 .teacherDiscrHeadList {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 32px;
+  padding-right: 60px;
 }
 
 .teacherDiscrHeadItem {

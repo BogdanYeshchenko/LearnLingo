@@ -10,6 +10,7 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
+import { authSlice } from "./auth/authReducer";
 
 const persistConfig = {
   key: "root",
@@ -18,7 +19,7 @@ const persistConfig = {
 
 const rootReduser = combineReducers({
   teachers: persistReducer(persistConfig, teachersReducer),
-  // followingStatus: persistReducer(persistConfig, followingStatusReducer),
+  [authSlice.name]: persistReducer(persistConfig, authSlice.reducer),
 });
 
 export const store = configureStore({

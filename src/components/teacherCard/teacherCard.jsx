@@ -1,6 +1,6 @@
 import "./teacherCard.css";
 import { PiBookOpen } from "react-icons/pi";
-import { AiFillStar } from "react-icons/ai";
+import { AiFillStar, AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { useState } from "react";
 import { nanoid } from "@reduxjs/toolkit";
 import Button from "../button/button";
@@ -144,6 +144,10 @@ const TeacherCard = ({ teacher }) => {
             />
           </div>
         </div>
+        <button type="button" className="addFavoriteBtn">
+          <AiOutlineHeart color={`var(--accent-color)`} size={26} />
+          <AiFillHeart color={`var(--accent-color)`} size={26} />
+        </button>
       </li>
       <Modal active={isModalActive} setActive={setIsModalActive}>
         <BookLessonForm

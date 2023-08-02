@@ -22,7 +22,7 @@ function Header() {
           </>
         </nav>
 
-        <Auth isLogin={false} />
+        <Auth />
       </header>
     </Conteiner>
   );

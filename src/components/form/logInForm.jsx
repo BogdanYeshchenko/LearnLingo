@@ -1,14 +1,17 @@
 import "./form.css";
 import { useState } from "react";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { TbEyeOff } from "react-icons/tb";
+import { logInThunk } from "../../redux/auth/authOperations";
 
-const LogInForm = () => {
+const LogInForm = ({ setIsActiveLoginModal }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  //   const distpatch = useDispatch();
+  const body = { email, password };
+
+  const dispatch = useDispatch();
 
   function handleFormEvent(e) {
     const name = e.target.name;
@@ -28,6 +31,8 @@ const LogInForm = () => {
       onSubmit={(e) => {
         e.preventDefault();
         console.log({ email, password });
+        dispatch(logInThunk(body)).unwrap();
+        setIsActiveLoginModal(false);
       }}
       className="LogInFormBox"
     >
