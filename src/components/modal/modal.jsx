@@ -29,16 +29,18 @@ const Modal = ({ active = false, setActive, children }) => {
         className={active ? "modalBox active" : "modalBox"}
         onClick={(e) => e.stopPropagation()}
       >
-        <button
-          type="button"
-          className="exitBtn"
-          onClick={() => {
-            setActive(false);
-          }}
-        >
-          {exitBtnSvg}
-        </button>
-        {children}
+        <div className="modalBoxScroll">
+          <button
+            type="button"
+            className="exitBtn"
+            onClick={() => {
+              setActive(false);
+            }}
+          >
+            {exitBtnSvg}
+          </button>
+          {children}
+        </div>
       </div>
     </div>
   );

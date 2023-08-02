@@ -157,7 +157,7 @@ const BookLessonForm = ({ teacherName, surname, avatar_url }) => {
           placeholder="Phone number"
           onChange={handleFormEvent}
           value={phone}
-          pattern="^\+?[0-9\s.-]+$"
+          pattern="^[\d\s.+]+$"
           title="Please enter a valid phone number"
           required
         />
