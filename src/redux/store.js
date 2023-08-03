@@ -1,8 +1,9 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import teachersReducer from "./teachers/teachersSlice.js";
-import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import {
+  persistStore,
+  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -10,20 +11,26 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
-import { authSlice } from "./auth/authReducer";
+import authReduser from "./auth/authReducer";
+import favoriteReduser from "./favorite/favoriteSlice";
 
 const persistConfig = {
   key: "root",
+  version: 1,
   storage,
+  blacklist: ["teachers"],
 };
 
-const rootReduser = combineReducers({
-  teachers: persistReducer(persistConfig, teachersReducer),
-  [authSlice.name]: persistReducer(persistConfig, authSlice.reducer),
+const rootReducer = combineReducers({
+  teachers: teachersReducer,
+  favorite: favoriteReduser,
+  auth: authReduser,
 });
 
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
 export const store = configureStore({
-  reducer: rootReduser,
+  reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {

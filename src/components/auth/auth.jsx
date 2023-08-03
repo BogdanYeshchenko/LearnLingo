@@ -12,11 +12,12 @@ import ClipLoader from "react-spinners/ClipLoader";
 const Auth = () => {
   const [isActiveLoginModal, setIsActiveLoginModal] = useState(false);
   const [isActiveRegisterModal, setIsActiveRegisterModal] = useState(false);
-  const isAuth = useSelector((state) => state.auth.isAuth);
-  const dispatch = useDispatch();
 
+  const isAuth = useSelector((state) => state.auth.isAuth);
   const login = useSelector((state) => state.auth.login);
   const isAuthLoading = useSelector((state) => state.auth.isAuthLoading);
+
+  const dispatch = useDispatch();
 
   if (isAuthLoading) {
     return (

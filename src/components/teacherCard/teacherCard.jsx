@@ -6,12 +6,20 @@ import { nanoid } from "@reduxjs/toolkit";
 import Button from "../button/button";
 import Modal from "../modal/modal";
 import BookLessonForm from "../form/bookLessonForm";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addFavorite,
+  removeFavorite,
+} from "../../redux/favorite/favoriteSlice";
 
 const TeacherCard = ({ teacher }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isModalActive, setIsModalActive] = useState(false);
+
+  const dispatch = useDispatch();
+
   const {
-    // id,
+    id,
     name,
     surname,
     languages,
@@ -25,6 +33,10 @@ const TeacherCard = ({ teacher }) => {
     conditions,
     experience,
   } = teacher;
+
+  const favoriteList = useSelector((state) => state.favorite.favorite);
+
+  const isTeacherFavorite = favoriteList.includes(id);
 
   return (
     <>
@@ -144,10 +156,29 @@ const TeacherCard = ({ teacher }) => {
             />
           </div>
         </div>
-        <button type="button" className="addFavoriteBtn">
-          <AiOutlineHeart color={`var(--accent-color)`} size={26} />
-          <AiFillHeart color={`var(--accent-color)`} size={26} />
-        </button>
+        {isTeacherFavorite ? (
+          <button
+            type="button"
+            className="addFavoriteBtn"
+            onClick={() => {
+              console.log("addFavoriteBtn");
+              dispatch(removeFavorite(id));
+            }}
+          >
+            <AiFillHeart color={`var(--accent-color)`} size={26} />
+          </button>
+        ) : (
+          <button
+            type="button"
+            className="addFavoriteBtn"
+            onClick={() => {
+              console.log("addFavoriteBtn");
+              dispatch(addFavorite(id));
+            }}
+          >
+            <AiOutlineHeart color={`var(--accent-color)`} size={26} />
+          </button>
+        )}
       </li>
       <Modal active={isModalActive} setActive={setIsModalActive}>
         <BookLessonForm
