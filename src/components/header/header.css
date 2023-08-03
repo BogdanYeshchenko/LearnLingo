@@ -28,28 +28,29 @@
   font-style: normal;
   font-weight: 400;
   line-height: 1, 25;
+  transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover,
 .nav-link:focus {
-  /* transition: background 500ms cubic-bezier(0.4, 0, 0.2, 1);
-  background: #5cd3a8; */
+  transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--accent-color);
 }
 
 .nav-link.active {
-  /* background: #5cd3a781;
-  position: relative; */
+  position: relative;
+  font-weight: 500;
 }
 
 .nav-link.active::before {
-  /* position: absolute;
+  position: absolute;
 
   display: inline-block;
   content: "";
 
   width: 100%;
   height: 4px;
-  top: 60px;
-  background: #5cd3a781;
-  border-radius: 2px; */
+  top: 20px;
+  background: var(--accent-color);
+  border-radius: 2px;
 }
