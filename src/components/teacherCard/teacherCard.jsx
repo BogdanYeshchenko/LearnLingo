@@ -6,15 +6,19 @@ import { nanoid } from "@reduxjs/toolkit";
 import Button from "../button/button";
 import Modal from "../modal/modal";
 import BookLessonForm from "../form/bookLessonForm";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import {
   addFavorite,
   removeFavorite,
 } from "../../redux/favorite/favoriteSlice";
+import { toast } from "react-toastify";
 
 const TeacherCard = ({ teacher }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isModalActive, setIsModalActive] = useState(false);
+
+  const isAuth = useSelector((state) => state.auth.isAuth);
+  const favoriteList = useSelector((state) => state.favorite.favorite);
 
   const dispatch = useDispatch();
 
@@ -33,8 +37,6 @@ const TeacherCard = ({ teacher }) => {
     conditions,
     experience,
   } = teacher;
-
-  const favoriteList = useSelector((state) => state.favorite.favorite);
 
   const isTeacherFavorite = favoriteList.includes(id);
 
@@ -156,12 +158,17 @@ const TeacherCard = ({ teacher }) => {
             />
           </div>
         </div>
-        {isTeacherFavorite ? (
+        {isTeacherFavorite && isAuth ? (
           <button
             type="button"
             className="addFavoriteBtn"
             onClick={() => {
-              console.log("addFavoriteBtn");
+              if (!isAuth) {
+                toast.warn(
+                  "The functionality is available only to authorized users"
+                );
+                return;
+              }
               dispatch(removeFavorite(id));
             }}
           >
@@ -172,7 +179,12 @@ const TeacherCard = ({ teacher }) => {
             type="button"
             className="addFavoriteBtn"
             onClick={() => {
-              console.log("addFavoriteBtn");
+              if (!isAuth) {
+                toast.warn(
+                  "The functionality is available only to authorized users"
+                );
+                return;
+              }
               dispatch(addFavorite(id));
             }}
           >
@@ -185,6 +197,7 @@ const TeacherCard = ({ teacher }) => {
           teacherName={name}
           surname={surname}
           avatar_url={avatar_url}
+          setIsModalActive={setIsModalActive}
         />
       </Modal>
     </>

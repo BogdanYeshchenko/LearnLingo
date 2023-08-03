@@ -2,6 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 import { ref, child, get } from "firebase/database";
 import { database } from "../../firebase/config";
+import { toast } from "react-toastify";
 
 export const getTeachers = createAsyncThunk(
   "teachers/getTeachers",
@@ -17,10 +18,11 @@ export const getTeachers = createAsyncThunk(
 
         return allTeachers;
       } else {
-        console.log("No data available");
+        toast.warn("No data available");
       }
     } catch (error) {
       console.error(error);
+      toast.error(`${error}`);
     }
   }
 );

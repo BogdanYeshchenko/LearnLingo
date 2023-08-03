@@ -37,8 +37,9 @@ const RegisterForm = ({ setIsActiveRegisterModal }) => {
         distpatch(logUpThunk(body));
 
         setIsActiveRegisterModal(false);
-
-        console.log({ name, email, password });
+        setName("");
+        setEmail("");
+        setPassword("");
       }}
       className="LogInFormBox"
     >
@@ -67,9 +68,9 @@ const RegisterForm = ({ setIsActiveRegisterModal }) => {
           placeholder="email"
           onChange={handleFormEvent}
           value={email}
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}"
           required
-        ></input>
+        />
 
         <div className="passwordInputBox">
           <input

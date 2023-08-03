@@ -2,10 +2,13 @@ import "./header.css";
 import Logo from "../logo/logo";
 import Auth from "../auth/auth";
 import Conteiner from "../conteiner/Conteiner";
+import { useSelector } from "react-redux";
 
 const { NavLink } = require("react-router-dom");
 
 function Header() {
+  const isAuth = useSelector((state) => state.auth.isAuth);
+
   return (
     <Conteiner>
       <header className="header">
@@ -15,10 +18,14 @@ function Header() {
             <NavLink className="nav-link" to={"/"}>
               Home
             </NavLink>
-
             <NavLink className="nav-link" to={"/teachers"}>
               Teachers
             </NavLink>
+            {isAuth && (
+              <NavLink className="nav-link" to={"/favorites"}>
+                Favorites
+              </NavLink>
+            )}
           </>
         </nav>
 

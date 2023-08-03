@@ -19,11 +19,9 @@ export const logUpThunk = createAsyncThunk(
 
       const { uid, displayName, email } = auth.currentUser;
 
-      console.log("currentUser", uid, displayName, email);
-
       return { uid, displayName, email };
     } catch (e) {
-      return thunkAPI.rejectWithValue(e.message);
+      return { error: e.message };
     }
   }
 );
@@ -32,22 +30,17 @@ export const logInThunk = createAsyncThunk(
   "auth/logInThunk",
   async (body, thunkAPI) => {
     try {
-      console.log(body);
       const response = await signInWithEmailAndPassword(
         auth,
         body.email,
         body.password
       );
-      console.log(222222);
 
       const { uid, displayName, email } = response.user;
 
-      console.log(333333);
-
       return { uid, displayName, email };
     } catch (e) {
-      console.error(e);
-      return thunkAPI.rejectWithValue(e.message);
+      return { error: e.message };
     }
   }
 );
@@ -58,8 +51,7 @@ export const logOutThunk = createAsyncThunk(
     try {
       await signOut(auth);
     } catch (e) {
-      console.error(e);
-      return thunkAPI.rejectWithValue(e.message);
+      return { error: e.message };
     }
   }
 );

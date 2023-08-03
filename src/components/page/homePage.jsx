@@ -1,8 +1,11 @@
 import "./homePage.css";
 import Conteiner from "../conteiner/Conteiner";
 import Button from "../button/button";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
   return (
     <Conteiner>
       <div className="homeMeinBox">
@@ -20,7 +23,7 @@ const HomePage = () => {
             <Button
               text="Get started"
               onClick={() => {
-                console.log("Get started");
+                navigate("/teachers");
               }}
             />
           </div>

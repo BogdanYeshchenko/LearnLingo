@@ -1,12 +1,19 @@
 import "./form.css";
 import { useState } from "react";
-// import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 
-const BookLessonForm = ({ teacherName, surname, avatar_url }) => {
+const BookLessonForm = ({
+  teacherName,
+  surname,
+  avatar_url,
+  setIsModalActive,
+}) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [reasonForLearning, setReasonForLearning] = useState("Lesson for kids");
+  const [reasonForLearning, setReasonForLearning] = useState(
+    "Career and business"
+  );
 
   function handleFormEvent(e) {
     const name = e.target.name;
@@ -31,7 +38,18 @@ const BookLessonForm = ({ teacherName, surname, avatar_url }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log({ name, email, phone, reasonForLearning });
+
+    const request = { name, email, phone, reasonForLearning };
+
+    setIsModalActive(false);
+
+    toast.success("Thank you for your trust!!!");
+
+    setName("");
+    setEmail("");
+    setPhone("");
+    setReasonForLearning("Career and business");
+    return request;
   }
 
   return (
@@ -146,7 +164,7 @@ const BookLessonForm = ({ teacherName, surname, avatar_url }) => {
           placeholder="Email"
           onChange={handleFormEvent}
           value={email}
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
           required
         ></input>
 

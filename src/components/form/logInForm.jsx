@@ -30,9 +30,10 @@ const LogInForm = ({ setIsActiveLoginModal }) => {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        console.log({ email, password });
         dispatch(logInThunk(body)).unwrap();
         setIsActiveLoginModal(false);
+        setEmail("");
+        setPassword("");
       }}
       className="LogInFormBox"
     >
@@ -50,9 +51,9 @@ const LogInForm = ({ setIsActiveLoginModal }) => {
           placeholder="email"
           onChange={handleFormEvent}
           value={email}
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}"
           required
-        ></input>
+        />
 
         <div className="passwordInputBox">
           <input
