@@ -2,26 +2,18 @@ import "./teacherCard.css";
 import { PiBookOpen } from "react-icons/pi";
 import { AiFillStar, AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { useState } from "react";
-import { nanoid } from "@reduxjs/toolkit";
-import Button from "../button/button";
-import Modal from "../modal/modal";
-import BookLessonForm from "../form/bookLessonForm";
 import { useSelector, useDispatch } from "react-redux";
+import { nanoid } from "@reduxjs/toolkit";
 import {
   addFavorite,
   removeFavorite,
 } from "../../redux/favorite/favoriteSlice";
 import { toast } from "react-toastify";
+import Button from "../button/button";
+import Modal from "../modal/modal";
+import BookLessonForm from "../form/bookLessonForm";
 
 const TeacherCard = ({ teacher }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [isModalActive, setIsModalActive] = useState(false);
-
-  const isAuth = useSelector((state) => state.auth.isAuth);
-  const favoriteList = useSelector((state) => state.favorite.favorite);
-
-  const dispatch = useDispatch();
-
   const {
     id,
     name,
@@ -37,6 +29,14 @@ const TeacherCard = ({ teacher }) => {
     conditions,
     experience,
   } = teacher;
+
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isModalActive, setIsModalActive] = useState(false);
+
+  const isAuth = useSelector((state) => state.auth.isAuth);
+  const favoriteList = useSelector((state) => state.favorite.favorite);
+
+  const dispatch = useDispatch();
 
   const isTeacherFavorite = favoriteList.includes(id);
 

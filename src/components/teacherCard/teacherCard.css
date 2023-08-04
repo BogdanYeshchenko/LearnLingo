@@ -1,11 +1,22 @@
 .teacherItemBox {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
 
   align-items: flex-start;
 
   border-radius: 24px;
   background: var(--white);
+  width: 100%;
+
+  padding: 12px;
+  gap: 24px;
+
+  @media screen and (min-width: 752px) {
+    flex-wrap: nowrap;
+    padding: 18px;
+    gap: 36px;
+  }
 
   @media screen and (min-width: 1440px) {
     width: 1184px;
@@ -74,7 +85,10 @@
 .teacherDiscrHead {
   display: flex;
 
+  flex-wrap: wrap;
+
   margin-bottom: 32px;
+  gap: 28px;
 
   @media screen and (min-width: 1440px) {
     width: 968px;
@@ -84,6 +98,7 @@
 
 .teacherDiscrHeadList {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 32px;
   padding-right: 60px;
@@ -172,6 +187,7 @@
 }
 .levelsList {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 
   margin-bottom: 32px;

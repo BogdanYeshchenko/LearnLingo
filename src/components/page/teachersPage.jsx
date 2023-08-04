@@ -1,12 +1,12 @@
+import "./teachersPage.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import { nanoid } from "@reduxjs/toolkit";
+import { getTeachers } from "../../redux/teachers/teachersOperations";
 import Conteiner from "../conteiner/Conteiner";
 import TeacherCard from "../teacherCard/teacherCard";
-import "./teachersPage.css";
-import { getTeachers } from "../../redux/teachers/teachersOperations";
 import PropagateLoader from "react-spinners/PropagateLoader";
 import ConteinerCenter from "../conteiner/ConteinerCenter";
-import { nanoid } from "@reduxjs/toolkit";
 import Button from "../button/button";
 import Filter from "../filter/filter";
 
@@ -17,7 +17,6 @@ const TeachersPage = () => {
   const teachers = useSelector((state) => state.teachers.teachers);
 
   const [loadedTeachersCount, setLoadedTeachersCount] = useState(4);
-
   const [languageFromFilter, setLanguageFromFilter] = useState(false);
   const [levelFromFilter, setLevelFromFilter] = useState(false);
   const [priceFromFilter, setPriceFromFilter] = useState(false);

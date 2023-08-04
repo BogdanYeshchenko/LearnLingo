@@ -1,11 +1,11 @@
-import Modal from "../modal/modal";
 import "./auth.css";
 import { FiLogIn, FiLogOut } from "react-icons/fi";
 import { useState } from "react";
-import LogInForm from "../form/logInForm";
-import RegisterForm from "../form/registerForm";
 import { useSelector, useDispatch } from "react-redux";
 import { logOutThunk } from "../../redux/auth/authOperations";
+import Modal from "../modal/modal";
+import LogInForm from "../form/logInForm";
+import RegisterForm from "../form/registerForm";
 import ConteinerCenter from "../conteiner/ConteinerCenter";
 import ClipLoader from "react-spinners/ClipLoader";
 

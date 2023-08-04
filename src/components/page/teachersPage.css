@@ -9,10 +9,10 @@
   width: 100%;
   max-width: 1312px;
 
-  padding: 0 64px;
+  padding: 0 16px;
   margin-bottom: 32px;
-  /* 
-  @media screen and (min-width: 1440px) {
-    width: 1184px;
-  } */
+
+  @media screen and (min-width: 600px) {
+    padding: 0 64px;
+  }
 }

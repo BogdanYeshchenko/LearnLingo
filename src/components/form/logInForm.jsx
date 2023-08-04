@@ -26,17 +26,17 @@ const LogInForm = ({ setIsActiveLoginModal }) => {
         return;
     }
   }
+
+  function heandleSubmitForm(e) {
+    e.preventDefault();
+    dispatch(logInThunk(body)).unwrap();
+    setIsActiveLoginModal(false);
+    setEmail("");
+    setPassword("");
+  }
+
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        dispatch(logInThunk(body)).unwrap();
-        setIsActiveLoginModal(false);
-        setEmail("");
-        setPassword("");
-      }}
-      className="LogInFormBox"
-    >
+    <form onSubmit={heandleSubmitForm} className="LogInFormBox">
       <p className="formTitle">Log In</p>
       <p className="formText">
         Welcome back! Please enter your credentials to access your account and

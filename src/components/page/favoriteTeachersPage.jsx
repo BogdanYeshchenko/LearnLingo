@@ -1,12 +1,12 @@
+import "./teachersPage.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import Conteiner from "../conteiner/Conteiner";
-import TeacherCard from "../teacherCard/teacherCard";
-import "./teachersPage.css";
+import { nanoid } from "@reduxjs/toolkit";
 import { getTeachers } from "../../redux/teachers/teachersOperations";
+import TeacherCard from "../teacherCard/teacherCard";
+import Conteiner from "../conteiner/Conteiner";
 import PropagateLoader from "react-spinners/PropagateLoader";
 import ConteinerCenter from "../conteiner/ConteinerCenter";
-import { nanoid } from "@reduxjs/toolkit";
 import Button from "../button/button";
 
 const FavoriteTeachersPage = () => {

@@ -1,8 +1,8 @@
 import "./filter.css";
 import { BsChevronDown } from "react-icons/bs";
 import { useState } from "react";
-import getUniqueValues from "../../helpers/getUniqueValues";
 import { nanoid } from "@reduxjs/toolkit";
+import getUniqueValues from "../../helpers/getUniqueValues";
 
 const Filter = ({
   teachers,
