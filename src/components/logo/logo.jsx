@@ -1,10 +1,18 @@
 import React from "react";
 
 import "./logo.css";
+import { useNavigate } from "react-router-dom";
 
 const Logo = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="logoBox">
+    <div
+      className="logoBox"
+      onClick={() => {
+        navigate("/");
+      }}
+    >
       <svg
         width="28"
         height="28"
