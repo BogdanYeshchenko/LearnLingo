@@ -30,19 +30,22 @@ const RegisterForm = ({ setIsActiveRegisterModal }) => {
         return;
     }
   }
-  return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        distpatch(logUpThunk(body));
 
+  function heandleFormSubmit(e) {
+    e.preventDefault();
+
+    distpatch(logUpThunk(body)).then((result) => {
+      if (!result.payload.error) {
         setIsActiveRegisterModal(false);
         setName("");
         setEmail("");
         setPassword("");
-      }}
-      className="LogInFormBox"
-    >
+      }
+    });
+  }
+
+  return (
+    <form onSubmit={heandleFormSubmit} className="LogInFormBox">
       <p className="formTitle">Registration</p>
       <p className="formText">
         Thank you for your interest in our platform! In order to register, we

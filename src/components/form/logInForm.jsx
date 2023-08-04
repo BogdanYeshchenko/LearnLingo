@@ -29,10 +29,15 @@ const LogInForm = ({ setIsActiveLoginModal }) => {
 
   function heandleSubmitForm(e) {
     e.preventDefault();
-    dispatch(logInThunk(body)).unwrap();
-    setIsActiveLoginModal(false);
-    setEmail("");
-    setPassword("");
+    dispatch(logInThunk(body))
+      .unwrap()
+      .then((result) => {
+        if (!result.error) {
+          setIsActiveLoginModal(false);
+          setEmail("");
+          setPassword("");
+        }
+      });
   }
 
   return (
