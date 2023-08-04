@@ -177,7 +177,7 @@ const TeacherCard = ({ teacher }) => {
         ) : (
           <button
             type="button"
-            className="addFavoriteBtn"
+            className="addFavoriteBtn heartbeat"
             onClick={() => {
               if (!isAuth) {
                 toast.warn(

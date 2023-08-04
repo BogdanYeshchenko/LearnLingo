@@ -53,33 +53,38 @@ const Filter = ({
           >
             <BsChevronDown name="languages" size={20} />
           </button>
-          {isLanguagesOpen && (
-            <ul className="dropDowList">
+
+          <ul
+            className={
+              isLanguagesOpen
+                ? "dropDowList active"
+                : "dropDowList visually-hidden"
+            }
+          >
+            <li
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                setSelectedLanguage("Сhoose a value");
+                setLanguageFromFilter(false);
+                setIsLanguagesOpen(false);
+              }}
+            >
+              skip...
+            </li>
+            {uniqueLanguagesArray.map((el) => (
               <li
+                key={nanoid()}
                 style={{ cursor: "pointer" }}
-                onClick={() => {
-                  setSelectedLanguage("Сhoose a value");
-                  setLanguageFromFilter(false);
+                onClick={(e) => {
+                  setSelectedLanguage(e.target.innerText);
+                  setLanguageFromFilter(e.target.innerText);
                   setIsLanguagesOpen(false);
                 }}
               >
-                skip...
+                {el}
               </li>
-              {uniqueLanguagesArray.map((el) => (
-                <li
-                  key={nanoid()}
-                  style={{ cursor: "pointer" }}
-                  onClick={(e) => {
-                    setSelectedLanguage(e.target.innerText);
-                    setLanguageFromFilter(e.target.innerText);
-                    setIsLanguagesOpen(false);
-                  }}
-                >
-                  {el}
-                </li>
-              ))}
-            </ul>
-          )}
+            ))}
+          </ul>
         </div>
       </div>
       <div className="filterBox">
@@ -94,33 +99,36 @@ const Filter = ({
           >
             <BsChevronDown size={20} />
           </button>
-          {isLevelOpen && (
-            <ul className="dropDowList">
+
+          <ul
+            className={
+              isLevelOpen ? "dropDowList active" : "dropDowList visually-hidden"
+            }
+          >
+            <li
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                setSelectedLevels("Сhoose a value");
+                setLevelFromFilter(false);
+                setIsLevelOpen(false);
+              }}
+            >
+              skip...
+            </li>
+            {uniqueLevelsArray.map((el) => (
               <li
+                key={nanoid()}
                 style={{ cursor: "pointer" }}
-                onClick={() => {
-                  setSelectedLevels("Сhoose a value");
-                  setLevelFromFilter(false);
+                onClick={(e) => {
+                  setSelectedLevels(e.target.innerText);
+                  setLevelFromFilter(e.target.innerText);
                   setIsLevelOpen(false);
                 }}
               >
-                skip...
+                {el}
               </li>
-              {uniqueLevelsArray.map((el) => (
-                <li
-                  key={nanoid()}
-                  style={{ cursor: "pointer" }}
-                  onClick={(e) => {
-                    setSelectedLevels(e.target.innerText);
-                    setLevelFromFilter(e.target.innerText);
-                    setIsLevelOpen(false);
-                  }}
-                >
-                  {el}
-                </li>
-              ))}
-            </ul>
-          )}
+            ))}
+          </ul>
         </div>
       </div>
       <div className="filterBox">
@@ -135,33 +143,35 @@ const Filter = ({
           >
             <BsChevronDown size={20} />
           </button>
-          {isPriceOpen && (
-            <ul className="dropDowList">
+          <ul
+            className={
+              isPriceOpen ? "dropDowList active" : "dropDowList visually-hidden"
+            }
+          >
+            <li
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                setSelectedPrice("Сhoose a value");
+                setPriceFromFilter(false);
+                setIsPriceOpen(false);
+              }}
+            >
+              skip...
+            </li>
+            {uniquePriceArray.map((el) => (
               <li
+                key={nanoid()}
                 style={{ cursor: "pointer" }}
-                onClick={() => {
-                  setSelectedPrice("Сhoose a value");
-                  setPriceFromFilter(false);
+                onClick={(e) => {
+                  setSelectedPrice(e.target.innerText);
+                  setPriceFromFilter(e.target.innerText);
                   setIsPriceOpen(false);
                 }}
               >
-                skip...
+                {el}
               </li>
-              {uniquePriceArray.map((el) => (
-                <li
-                  key={nanoid()}
-                  style={{ cursor: "pointer" }}
-                  onClick={(e) => {
-                    setSelectedPrice(e.target.innerText);
-                    setPriceFromFilter(e.target.innerText);
-                    setIsPriceOpen(false);
-                  }}
-                >
-                  {el}
-                </li>
-              ))}
-            </ul>
-          )}
+            ))}
+          </ul>
         </div>
       </div>
     </div>
