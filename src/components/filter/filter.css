@@ -133,6 +133,7 @@
     transform: rotateX(70deg);
     -webkit-transform-origin: top;
     transform-origin: top;
+
     opacity: 0;
     width: 1px;
     height: 1px;
