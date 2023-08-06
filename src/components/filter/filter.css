@@ -73,10 +73,6 @@
   font-style: normal;
   font-weight: 500;
   line-height: 1.11;
-
-  -webkit-animation: swing-out-top-fwd 0.55s
-    cubic-bezier(0.6, -0.28, 0.735, 0.045) both;
-  animation: swing-out-top-fwd 0.55s cubic-bezier(0.6, -0.28, 0.735, 0.045) both;
 }
 
 .dropDowList.active {
@@ -86,17 +82,9 @@
 }
 
 .dropDowList.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+  -webkit-animation: swing-out-top-fwd 0.55s
+    cubic-bezier(0.6, -0.28, 0.735, 0.045) both;
+  animation: swing-out-top-fwd 0.55s cubic-bezier(0.6, -0.28, 0.735, 0.045) both;
 }
 
 @-webkit-keyframes swing-in-top-fwd {
@@ -146,5 +134,15 @@
     -webkit-transform-origin: top;
     transform-origin: top;
     opacity: 0;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
   }
 }

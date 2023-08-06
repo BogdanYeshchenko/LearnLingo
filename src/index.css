@@ -2,19 +2,12 @@
 
 body {
   background-color: #f8f8f8;
+  padding-bottom: 16px;
 }
 
 :root {
   --accent-color: #f4c550;
   --latte-bg: #fbe9ba;
-  --aaaa2: #9fbaae;
-  --aaaa3: #cbded3;
-  --aaaa4: #9fb7ce;
-  --aaaa5: #bfd6ea;
-  --aaaa6: #e0a39a;
-  --aaaa7: #f2c0bd;
-  --aaaa8: #f0aa8d;
-  --aaaa9: #f4c8ba;
   --main-black: #121417;
   --grey-bg: #f8f8f8;
   --white: #ffffff;
