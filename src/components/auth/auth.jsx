@@ -31,7 +31,7 @@ const Auth = () => {
     return (
       <div className="authBox">
         <button
-          className="logInButton"
+          className={`logInButton`}
           type="button"
           onClick={() => {
             setIsActiveLoginModal(true);
@@ -42,7 +42,7 @@ const Auth = () => {
         </button>
 
         <button
-          className="registrationButton"
+          className={`registrationButton`}
           type="button"
           onClick={() => {
             setIsActiveRegisterModal(true);
@@ -67,7 +67,7 @@ const Auth = () => {
     <div className="authBox">
       <p className="hello">Hello, {login}!</p>
       <button
-        className="logInButton"
+        className={`logInButton`}
         type="button"
         onClick={() => {
           dispatch(logOutThunk());

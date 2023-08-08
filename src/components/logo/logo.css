@@ -5,6 +5,15 @@
   align-items: center;
 
   cursor: pointer;
+
+  transform: scale(1);
+  transition: transform 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.logoBox:hover,
+.logoBox:focus {
+  transform: scale(1.2);
+  transition: transform 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 .logoText {

@@ -12,6 +12,7 @@ import { toast } from "react-toastify";
 import Button from "../button/button";
 import Modal from "../modal/modal";
 import BookLessonForm from "../form/bookLessonForm";
+import { AvatarGenerator } from "random-avatar-generator";
 
 const TeacherCard = ({ teacher }) => {
   const {
@@ -39,6 +40,8 @@ const TeacherCard = ({ teacher }) => {
   const dispatch = useDispatch();
 
   const isTeacherFavorite = favoriteList.includes(id);
+
+  const generator = new AvatarGenerator();
 
   return (
     <>
@@ -115,7 +118,7 @@ const TeacherCard = ({ teacher }) => {
                     <li key={nanoid()} className="fitbackItem">
                       <div className="fitbackUser">
                         <img
-                          src={el.avatar_url}
+                          src={generator.generateRandomAvatar()}
                           className="fidbackAvatar"
                           alt="Fitback avatar"
                           height="44px"
@@ -125,7 +128,7 @@ const TeacherCard = ({ teacher }) => {
                           <span className="greyTitle">{el.reviewer_name}</span>
                           <span className="fitbackStars">
                             <AiFillStar color="#FFC531" size={16} />
-                            {el.reviewer_rating}
+                            {el.reviewer_rating},0
                           </span>
                         </div>
                       </div>

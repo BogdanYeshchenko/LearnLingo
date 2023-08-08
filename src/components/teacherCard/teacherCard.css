@@ -29,6 +29,15 @@
   position: absolute;
   top: 24px;
   right: 24px;
+
+  transform: scale(1);
+  transition: transform 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.addFavoriteBtn:hover,
+.addFavoriteBtn:focus {
+  transform: scale(1.2);
+  transition: transform 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 .avatarBox {
@@ -184,7 +193,17 @@
   text-decoration-line: underline;
 
   margin-bottom: 32px;
+
+  transform: scale(1);
+  transition: transform 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
 }
+
+.ReadMoreBtn:hover,
+.ReadMoreBtn:focus {
+  transform: scale(1.2);
+  transition: transform 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
 .levelsList {
   display: flex;
   flex-wrap: wrap;

@@ -159,12 +159,21 @@
   border: none;
   background: var(--accent-color);
 
+  transform: scale(1);
+  transition: transform 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
+
   color: var(--main-black);
   font-family: Roboto;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: 1.55;
+}
+
+.submitBtn:hover,
+.submitBtn:focus {
+  transform: scale(1.1);
+  transition: transform 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 .passwordInputBox {
