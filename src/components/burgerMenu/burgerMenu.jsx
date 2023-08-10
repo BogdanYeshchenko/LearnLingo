@@ -18,7 +18,7 @@ const BurgerMenu = ({ header, items, isBrgOpen, setIsBrgOpen }) => {
           <ul className="burgerMenuList">
             {items.map((item) => {
               if (!item.isPrint) {
-                return <></>;
+                return null;
               }
               return (
                 <li key={nanoid()}>

@@ -7,6 +7,7 @@ import Conteiner from "../conteiner/Conteiner";
 import Logo from "../logo/logo";
 import Auth from "../auth/auth";
 import BurgerMenu from "../burgerMenu/burgerMenu";
+import { nanoid } from "nanoid";
 
 const { NavLink } = require("react-router-dom");
 
@@ -29,10 +30,10 @@ function Header() {
           <nav className="nav">
             <ul className="navList">
               {items.map((item) => {
-                if (!item.isPrint) return <></>;
+                if (!item.isPrint) return null;
                 return (
-                  <li>
-                    <NavLink className="nav-link" to={item.goTo}>
+                  <li key={nanoid()} className="nav-link">
+                    <NavLink to={item.goTo} className="nav-link-item">
                       {item.value}
                     </NavLink>
                   </li>

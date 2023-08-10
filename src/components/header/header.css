@@ -64,13 +64,13 @@
   transition: transform 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
-.nav-link.active {
+.nav-link-item.active {
   position: relative;
   font-weight: 500;
   color: var(--accent-color);
 }
 
-.nav-link.active::before {
+.nav-link-item.active::before {
   position: absolute;
 
   display: inline-block;

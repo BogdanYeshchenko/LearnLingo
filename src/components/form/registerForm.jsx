@@ -71,7 +71,7 @@ const RegisterForm = ({ setIsActiveRegisterModal }) => {
           placeholder="email"
           onChange={handleFormEvent}
           value={email}
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}"
+          // pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"
           required
         />
 
