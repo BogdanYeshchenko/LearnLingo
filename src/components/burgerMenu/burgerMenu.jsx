@@ -9,9 +9,9 @@ const BurgerMenu = ({ header, items, isBrgOpen, setIsBrgOpen }) => {
       className={isBrgOpen ? "burgerMenuMeinBox active" : "burgerMenuMeinBox"}
       onClick={() => setIsBrgOpen(false)}
     >
-      <div
+      {/* <div
         className={isBrgOpen ? "burgerMenuBlur active" : "burgerMenuBlur"}
-      ></div>
+      ></div> */}
       <div className="burgerMenuContent" onClick={(e) => e.stopPropagation()}>
         {header && <div className="burgerMenuHeader">{header}</div>}
         <nav>
@@ -22,7 +22,11 @@ const BurgerMenu = ({ header, items, isBrgOpen, setIsBrgOpen }) => {
               }
               return (
                 <li key={nanoid()}>
-                  <Link className="burgerMenuLink" to={item.goTo}>
+                  <Link
+                    className="burgerMenuLink"
+                    to={item.goTo}
+                    onClick={() => setIsBrgOpen(false)}
+                  >
                     {item.value}
                   </Link>
                 </li>

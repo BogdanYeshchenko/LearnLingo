@@ -27,19 +27,18 @@ function Header() {
         <Logo />
         <div className="authAndNav">
           <nav className="nav">
-            <>
-              <NavLink className="nav-link" to={"/"}>
-                Home
-              </NavLink>
-              <NavLink className="nav-link" to={"/teachers"}>
-                Teachers
-              </NavLink>
-              {isAuth && (
-                <NavLink className="nav-link" to={"/favorites"}>
-                  Favorites
-                </NavLink>
-              )}
-            </>
+            <ul className="navList">
+              {items.map((item) => {
+                if (!item.isPrint) return <></>;
+                return (
+                  <li>
+                    <NavLink className="nav-link" to={item.goTo}>
+                      {item.value}
+                    </NavLink>
+                  </li>
+                );
+              })}
+            </ul>
           </nav>
           <Auth />
           <div

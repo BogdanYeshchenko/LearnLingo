@@ -31,6 +31,14 @@
   display: none;
 
   @media screen and (min-width: 1440px) {
+    display: block;
+  }
+}
+
+.navList {
+  display: none;
+
+  @media screen and (min-width: 1440px) {
     display: flex;
     align-items: center;
     flex-direction: row;
