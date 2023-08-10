@@ -43,14 +43,13 @@ const Filter = ({
     <div className="FilterMainBox">
       <div className="filterBox">
         <p className="filterTitle">Languages</p>
-        <div className="filterInputBox" style={{ minWidth: "221px" }}>
+        <div
+          onClick={() => handleOpenList("languages")}
+          className="filterInputBox"
+          style={{ minWidth: "221px", cursor: "pointer" }}
+        >
           {selectedLanguage}
-          <button
-            name="languages"
-            type="button"
-            className="openListBtn"
-            onClick={() => handleOpenList("languages")}
-          >
+          <button name="languages" type="button" className="openListBtn">
             <BsChevronDown name="languages" size={20} />
           </button>
 
@@ -89,14 +88,13 @@ const Filter = ({
       </div>
       <div className="filterBox">
         <p className="filterTitle">Level of knowledge</p>
-        <div className="filterInputBox" style={{ minWidth: "198px" }}>
+        <div
+          onClick={() => handleOpenList("level")}
+          className="filterInputBox"
+          style={{ minWidth: "198px", cursor: "pointer" }}
+        >
           {selectedLevels}
-          <button
-            name="level"
-            type="button"
-            className="openListBtn"
-            onClick={() => handleOpenList("level")}
-          >
+          <button name="level" type="button" className="openListBtn">
             <BsChevronDown size={20} />
           </button>
 
@@ -133,14 +131,13 @@ const Filter = ({
       </div>
       <div className="filterBox">
         <p className="filterTitle">Price</p>
-        <div className="filterInputBox" style={{ minWidth: "124px" }}>
+        <div
+          onClick={() => handleOpenList("price")}
+          className="filterInputBox"
+          style={{ minWidth: "124px", cursor: "pointer" }}
+        >
           {selectedPrice} $
-          <button
-            name="price"
-            type="button"
-            className="openListBtn"
-            onClick={() => handleOpenList("price")}
-          >
+          <button name="price" type="button" className="openListBtn">
             <BsChevronDown size={20} />
           </button>
           <ul

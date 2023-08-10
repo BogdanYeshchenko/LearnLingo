@@ -15,7 +15,7 @@ const HomePage = () => {
               Unlock your potential with the best{" "}
               <span className="heroTitleAccent">language</span> tutors
             </h1>
-            <p>
+            <p className="heroAboutText">
               Embark on an Exciting Language Journey with Expert Language
               Tutors: Elevate your language proficiency to new heights by
               connecting with highly qualified and experienced tutors.
@@ -44,24 +44,26 @@ const HomePage = () => {
             />
           </div>
         </div>
-        <ul className="statisticList">
-          <li className="statisticItem">
-            <p className="statisticNamber">32,000 +</p>
-            <p className="statisticText">Experienced tutors</p>
-          </li>
-          <li className="statisticItem">
-            <p className="statisticNamber">300,000 +</p>
-            <p className="statisticText">5-star tutor reviews</p>
-          </li>
-          <li className="statisticItem">
-            <p className="statisticNamber">120 +</p>
-            <p className="statisticText">Subjects taught tutors</p>
-          </li>
-          <li className="statisticItem">
-            <p className="statisticNamber">200 +</p>
-            <p className="statisticText">Tutor nationalities</p>
-          </li>
-        </ul>
+        <div className="statisticListBox">
+          <ul className="statisticList">
+            <li className="statisticItem">
+              <p className="statisticNamber">32,000 +</p>
+              <p className="statisticText">Experienced tutors</p>
+            </li>
+            <li className="statisticItem">
+              <p className="statisticNamber">300,000 +</p>
+              <p className="statisticText">5-star tutor reviews</p>
+            </li>
+            <li className="statisticItem">
+              <p className="statisticNamber">120 +</p>
+              <p className="statisticText">Subjects taught tutors</p>
+            </li>
+            <li className="statisticItem">
+              <p className="statisticNamber">200 +</p>
+              <p className="statisticText">Tutor nationalities</p>
+            </li>
+          </ul>
+        </div>
       </div>
     </Conteiner>
   );
